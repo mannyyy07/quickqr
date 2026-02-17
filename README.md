@@ -1,49 +1,31 @@
 # QuickQR
 
-QuickQR is a lightweight web app to generate QR codes from links, download them as PNG/SVG, and track anonymous usage analytics.
+A fast, clean QR code generator for links.
 
-Live app:
-- `https://quickqr-live.vercel.app`
+## Live App
+`https://quickqr-live.vercel.app`
 
-## Features
-- Generate QR code from any valid URL
-- Download QR as `PNG` or `SVG`
-- One-click `+ New` reset flow
-- Dark/light mode
-- Admin analytics dashboard at `/admin`
+## What QuickQR Does
+- Convert any valid URL into a QR code instantly
+- Download QR as PNG or SVG
+- Clear the current QR with `+ New` for quick next-use flow
+- Smooth dark/light mode experience
+- Mobile-friendly interface
 
-## Tech Stack
-- `Next.js` (App Router, TypeScript)
-- `Supabase` (Postgres analytics storage)
-- `Vercel` (hosting + deployments)
+## Who It Is For
+- Creators sharing links quickly
+- Students and professionals adding QR to resumes or portfolios
+- Small campaigns and event promotions
+- Anyone who needs a simple QR workflow without noise
 
-## Local Development
-1. Install dependencies:
-```bash
-npm install
-```
-2. Create env file:
-```bash
-cp .env.example .env.local
-```
-3. Fill required variables in `.env.local`:
-- `NEXT_PUBLIC_SUPABASE_URL`
-- `SUPABASE_SERVICE_ROLE_KEY`
-- `ADMIN_DASHBOARD_KEY` (optional, recommended)
-4. Start the app:
-```bash
-npm run dev
-```
+## Highlights
+- No login required for normal QR generation
+- Fast generation and download
+- Clean design focused on usability
+- Built with modern web stack and deployed on Vercel
 
-## Database Setup
-Run the SQL in `supabase/schema.sql` inside Supabase SQL Editor.
+## Links
+- Live: `https://quickqr-live.vercel.app`
+- GitHub: `https://github.com/mannyyy07/quickqr-live`
 
-## Admin Dashboard
-- URL: `/admin`
-- Protected URL (if key set): `/admin?key=YOUR_ADMIN_DASHBOARD_KEY`
-
-## Deploy
-1. Push to GitHub.
-2. Connect the repo in Vercel.
-3. Add the same environment variables in Vercel Project Settings.
-4. Deploy.
+Built with focus on speed, clarity, and everyday utility.
