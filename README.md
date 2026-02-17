@@ -1,81 +1,49 @@
 # QuickQR
 
-QuickQR lets users:
-- Paste any link
-- Generate a QR code instantly
-- Download as PNG or SVG
-- Store anonymous analytics events in Supabase
+QuickQR is a lightweight web app to generate QR codes from links, download them as PNG/SVG, and track anonymous usage analytics.
 
-## Stack
-- Next.js (App Router)
-- Vercel (hosting)
-- Supabase Postgres (analytics DB)
+Live app:
+- `https://quickqr-live.vercel.app`
 
-## Local Setup
+## Features
+- Generate QR code from any valid URL
+- Download QR as `PNG` or `SVG`
+- One-click `+ New` reset flow
+- Dark/light mode
+- Admin analytics dashboard at `/admin`
+
+## Tech Stack
+- `Next.js` (App Router, TypeScript)
+- `Supabase` (Postgres analytics storage)
+- `Vercel` (hosting + deployments)
+
+## Local Development
 1. Install dependencies:
-
 ```bash
 npm install
 ```
-
-2. Copy `.env.example` to `.env.local` and set values:
-
+2. Create env file:
 ```bash
 cp .env.example .env.local
 ```
-
-3. Run dev server:
-
+3. Fill required variables in `.env.local`:
+- `NEXT_PUBLIC_SUPABASE_URL`
+- `SUPABASE_SERVICE_ROLE_KEY`
+- `ADMIN_DASHBOARD_KEY` (optional, recommended)
+4. Start the app:
 ```bash
 npm run dev
 ```
 
-4. Open `http://localhost:3000`.
-
-## Supabase Table
-Run this SQL in Supabase SQL Editor:
-
-```sql
-create extension if not exists pgcrypto;
-
-create table if not exists public.analytics_events (
-  id uuid primary key default gen_random_uuid(),
-  created_at timestamptz not null default now(),
-  event_type text not null check (event_type in ('page_visit', 'qr_generated', 'qr_downloaded')),
-  session_id text not null,
-  payload jsonb not null default '{}'::jsonb,
-  ip_hash text not null,
-  user_agent text,
-  referrer text
-);
-
-create index if not exists analytics_events_created_at_idx
-  on public.analytics_events (created_at desc);
-
-create index if not exists analytics_events_event_type_idx
-  on public.analytics_events (event_type);
-```
-
-## Environment Variables
-`NEXT_PUBLIC_SUPABASE_URL`:
-- Supabase project URL
-
-`SUPABASE_SERVICE_ROLE_KEY`:
-- Service role key (server-side only)
-- Do not expose this key to client code
-
-`ADMIN_DASHBOARD_KEY` (optional):
-- If set, `/admin` requires `?key=YOUR_VALUE`
-
-If these variables are missing, the app still works but analytics inserts are skipped.
+## Database Setup
+Run the SQL in `supabase/schema.sql` inside Supabase SQL Editor.
 
 ## Admin Dashboard
-- Route: `/admin`
-- Shows event totals, 14-day trend, top domains, and recent events
-- For production, set `ADMIN_DASHBOARD_KEY` and open `/admin?key=...`
+- URL: `/admin`
+- Protected URL (if key set): `/admin?key=YOUR_ADMIN_DASHBOARD_KEY`
 
-## Deploy (Free)
-1. Push this repo to GitHub.
-2. Import into Vercel.
-3. Add the two environment variables in Vercel Project Settings.
+## Deploy
+1. Push to GitHub.
+2. Connect the repo in Vercel.
+3. Add the same environment variables in Vercel Project Settings.
 4. Deploy.
