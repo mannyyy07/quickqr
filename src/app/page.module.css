@@ -1,0 +1,257 @@
+.page {
+  width: 100%;
+  min-height: 100vh;
+  display: grid;
+  gap: 1.5rem;
+  padding: 3rem 2.5rem 3.5rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  align-content: center;
+  position: relative;
+}
+
+.heroCard,
+.previewCard {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  padding: 1.1rem;
+  box-shadow: var(--shadow);
+}
+
+.heroCard {
+  max-width: 560px;
+  justify-self: stretch;
+}
+
+.badge {
+  display: inline-block;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--brand-strong);
+  margin-bottom: 0.55rem;
+}
+
+.title {
+  font-size: clamp(1.7rem, 3.4vw, 2.4rem);
+  line-height: 1.1;
+  margin-bottom: 0.6rem;
+}
+
+.subtitle {
+  color: var(--ink-soft);
+  margin-bottom: 0.45rem;
+}
+
+.form {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.label {
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.input {
+  width: 100%;
+  border: 1px solid rgba(148, 163, 184, 0.45);
+  border-radius: 12px;
+  padding: 0.75rem 0.8rem;
+  font-size: 0.98rem;
+  outline: none;
+  background: var(--input-bg);
+  color: var(--ink-strong);
+}
+
+.input:focus {
+  border-color: var(--brand);
+  box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.2);
+}
+
+.primaryButton {
+  border: none;
+  border-radius: 14px;
+  padding: 0.82rem 1rem;
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: white;
+  background: linear-gradient(130deg, var(--brand) 0%, var(--brand-strong) 100%);
+  cursor: pointer;
+  margin-top: 0.35rem;
+}
+
+.primaryButton:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.secondaryButton {
+  border: 1px solid rgba(148, 163, 184, 0.5);
+  border-radius: 12px;
+  padding: 0.7rem 0.9rem;
+  font-size: 0.92rem;
+  font-weight: 600;
+  background: var(--surface-strong);
+  color: var(--ink-strong);
+  cursor: pointer;
+}
+
+.secondaryButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.themeToggle {
+  position: fixed;
+  top: 1.2rem;
+  right: 1.2rem;
+  z-index: 20;
+  border: 1px solid rgba(148, 163, 184, 0.45);
+  border-radius: 999px;
+  padding: 0.45rem 0.6rem;
+  background: var(--surface-strong);
+  color: var(--ink-strong);
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.themeIcon {
+  font-size: 1.05rem;
+  line-height: 1;
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.error {
+  color: var(--danger);
+  font-weight: 700;
+  margin-top: 0.7rem;
+}
+
+.previewCard {
+  display: grid;
+  align-content: start;
+  gap: 0.9rem;
+}
+
+.previewHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+}
+
+.previewTitle {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--ink-soft);
+}
+
+.previewShell {
+  min-height: 260px;
+  border: 1px dashed rgba(148, 163, 184, 0.5);
+  border-radius: 18px;
+  display: grid;
+  place-items: center;
+  background: var(--surface-strong);
+  transition: all 220ms ease;
+  padding: 1rem;
+}
+
+.qrImage {
+  width: min(72vw, 320px);
+  height: auto;
+  border-radius: 10px;
+  animation: fadeIn 220ms ease;
+}
+
+.emptyText {
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+}
+
+.actions {
+  display: flex;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+}
+
+.clearButton {
+  border: 1px solid rgba(148, 163, 184, 0.45);
+  border-radius: 999px;
+  padding: 0.35rem 0.75rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  background: var(--surface-strong);
+  color: var(--ink-strong);
+  cursor: pointer;
+}
+
+.clearButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.footer {
+  grid-column: 1 / -1;
+  text-align: center;
+  font-size: 0.78rem;
+  color: var(--ink-soft);
+  opacity: 0.8;
+  margin-top: 0.5rem;
+}
+
+@media (min-width: 920px) {
+  .page {
+    grid-template-columns: minmax(420px, 1fr) minmax(420px, 1fr);
+    align-items: stretch;
+    min-height: 100vh;
+    gap: 2.5rem;
+    width: min(94vw, 1400px);
+  }
+
+  .heroCard {
+    justify-self: stretch;
+    min-height: 480px;
+  }
+
+  .previewCard {
+    justify-self: stretch;
+    min-height: 480px;
+  }
+
+  .previewShell {
+    min-height: 360px;
+  }
+}
+
+@media (max-width: 560px) {
+  .page {
+    padding: 1.4rem 1rem 2rem;
+  }
+
+  .heroCard,
+  .previewCard {
+    padding: 1rem;
+    border-radius: 18px;
+  }
+
+  .title {
+    font-size: 1.6rem;
+  }
+}
