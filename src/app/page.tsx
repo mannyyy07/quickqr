@@ -194,7 +194,15 @@ export default function Home() {
       </button>
 
       <section className={styles.heroCard}>
-        <p className={styles.badge}>QuickQR</p>
+        <div className={styles.brandRow}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/logo-scan-frame.svg"
+            alt="QuickQR logo"
+            className={styles.logo}
+          />
+          <p className={styles.badge}>QuickQR</p>
+        </div>
         <h1 className={styles.title}>Turn any link into a QR code in seconds.</h1>
         <p className={styles.subtitle}>
           Paste a URL, generate a sharp QR, and download PNG or SVG.

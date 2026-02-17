@@ -15,6 +15,9 @@ const jetBrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: "QuickQR",
   description: "Generate and download QR codes instantly.",
+  icons: {
+    icon: "/logo-scan-frame.svg",
+  },
 };
 
 export default function RootLayout({

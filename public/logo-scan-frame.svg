@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="QuickQR Scan Frame logo">
+  <rect width="256" height="256" rx="56" fill="#0B1117"/>
+  <rect x="44" y="44" width="168" height="168" rx="28" fill="none" stroke="#38BDF8" stroke-width="10"/>
+  <path d="M68 68h40M68 68v40" stroke="#38BDF8" stroke-width="10" stroke-linecap="round"/>
+  <path d="M188 68h-40M188 68v40" stroke="#38BDF8" stroke-width="10" stroke-linecap="round"/>
+  <path d="M68 188h40M68 188v-40" stroke="#38BDF8" stroke-width="10" stroke-linecap="round"/>
+  <path d="M188 188h-40M188 188v-40" stroke="#38BDF8" stroke-width="10" stroke-linecap="round"/>
+  <rect x="96" y="96" width="20" height="20" rx="4" fill="#E2E8F0"/>
+  <rect x="120" y="96" width="20" height="20" rx="4" fill="#E2E8F0"/>
+  <rect x="144" y="96" width="20" height="20" rx="4" fill="#E2E8F0"/>
+  <rect x="96" y="120" width="20" height="20" rx="4" fill="#0EA5E9"/>
+  <rect x="120" y="120" width="20" height="20" rx="4" fill="#E2E8F0"/>
+  <rect x="144" y="120" width="20" height="20" rx="4" fill="#E2E8F0"/>
+  <rect x="96" y="144" width="20" height="20" rx="4" fill="#E2E8F0"/>
+  <rect x="120" y="144" width="20" height="20" rx="4" fill="#E2E8F0"/>
+  <rect x="144" y="144" width="20" height="20" rx="4" fill="#E2E8F0"/>
+</svg>
